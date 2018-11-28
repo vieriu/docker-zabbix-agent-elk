@@ -1,0 +1,4 @@
+- deploy the yaml in k8s
+- create an internal  classic LoadBalancer with 10050 listen port - that forwards traffic to port 32050, add k8s worker nodes to the elb.  see k8s-stage-zabbix-agent-elk elb in aws.
+- create a cname to the elb
+- in zabbix server frontend create a hostname named zabbix-agent-elk(same name as ZBX_HOSTNAME from the yaml), for Agent Interfaces field fill in DNS name with cname created in previous step, tick Connect to DNS button. add templates "Template App ElasticSearch" and "Template App Zabbix Agent" to the host
